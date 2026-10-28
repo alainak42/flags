@@ -1,0 +1,30 @@
+---
+title: "Flag Selector"
+format: html
+---
+
+Choose a country from the dropdown below to display its flag:
+
+```{ojs}
+// Dropdown menu of countries and flag image URLs
+viewof selectedFlag = Inputs.select(
+  new Map([
+    ["United States", "https://flagcdn.com/w320/us.png"],
+    ["Canada", "https://flagcdn.com/w320/ca.png"],
+    ["United Kingdom", "https://flagcdn.com/w320/gb.png"],
+    ["France", "https://flagcdn.com/w320/fr.png"],
+    ["Germany", "https://flagcdn.com/w320/de.png"],
+    ["Japan", "https://flagcdn.com/w320/jp.png"],
+    ["Brazil", "https://flagcdn.com/w320/br.png"],
+    ["India", "https://flagcdn.com/w320/in.png"],
+    ["Australia", "https://flagcdn.com/w320/au.png"],
+    ["South Africa", "https://flagcdn.com/w320/za.png"]
+  ]),
+  { label: "Country:" }
+)
+```
+
+```{ojs}
+// Display the selected flag image
+html`<img src="${selectedFlag}" alt="Flag" style="max-width: 320px; border: 1px solid #ddd; border-radius: 4px; margin-top: 10px;">`
+```
